@@ -32,7 +32,7 @@ private:
 	void Draw(TreeNode*, int x, int y, int horizontalSpacing, TreeNode* selected = nullptr);
 
 	//The root node of the tree
-	TreeNode* m_pRoot;
+	TreeNode* TreeRootNode;
 };
 
 #endif //_BINARYTREE_H_

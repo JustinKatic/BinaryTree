@@ -13,28 +13,31 @@ using namespace std;
 
 BinaryTree::BinaryTree()
 {
-    m_pRoot = nullptr;
+	TreeRootNode = nullptr;
 }
 
 BinaryTree::~BinaryTree()
 {
-	while(m_pRoot)
+	while(TreeRootNode)
 	{
-		Remove(m_pRoot->GetData());
+		Remove(TreeRootNode->GetData());
 	}
 }
 
 // Return whether the tree is empty
 bool BinaryTree::IsEmpty() const 
 { 
-	return (m_pRoot == nullptr);
+	return (TreeRootNode == nullptr);
 }
 
 // Insert a new element into the tree.
 // Smaller elements are placed to the left, larger onces are placed to the right.
 void BinaryTree::Insert(int a_nValue)
 {
-	
+	if (IsEmpty() == true);
+	{
+
+	}
 }
 
 TreeNode* BinaryTree::Find(int a_nValue)
@@ -47,8 +50,6 @@ TreeNode* BinaryTree::Find(int a_nValue)
 
 bool BinaryTree::FindNode(int a_nSearchValue, TreeNode*& ppOutNode, TreeNode*& ppOutParent)
 {
-
-
 	return false;
 }
 
@@ -57,9 +58,10 @@ void BinaryTree::Remove(int a_nValue)
 
 }
 
+//just do while loop instead of look further into recursion method which is function calling upon itself
 void BinaryTree::PrintOrdered()
 {
-	PrintOrderedRecurse(m_pRoot);
+	PrintOrderedRecurse(TreeRootNode);
 	cout << endl;
 }
 
@@ -70,7 +72,7 @@ void BinaryTree::PrintOrderedRecurse(TreeNode* pNode)
 
 void BinaryTree::PrintUnordered()
 {
-    PrintUnorderedRecurse(m_pRoot);
+    PrintUnorderedRecurse(TreeRootNode);
 	cout << endl;
 }
 
@@ -81,7 +83,7 @@ void BinaryTree::PrintUnorderedRecurse(TreeNode* pNode)
 
 void BinaryTree::Draw(TreeNode* selected)
 {
-	Draw(m_pRoot, 400, 40, 400, selected);
+	Draw(TreeRootNode, 400, 40, 400, selected);
 }
 
 void BinaryTree::Draw(TreeNode* pNode, int x, int y, int horizontalSpacing, TreeNode* selected)
