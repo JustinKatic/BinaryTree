@@ -9,66 +9,66 @@
 
 int main(int argc, char* argv[])
 {
-	// Initialization
-	//--------------------------------------------------------------------------------------
-	int screenWidth = 800;
-	int screenHeight = 450;
+    // Initialization
+    //--------------------------------------------------------------------------------------
+    int screenWidth = 800;
+    int screenHeight = 450;
 
-	InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
+    InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
-	SetTargetFPS(60);
-	//--------------------------------------------------------------------------------------
-
-
-	BinaryTree m_binaryTree;
-	TreeNode* m_selectedNode = nullptr;
+    SetTargetFPS(60);
+    //--------------------------------------------------------------------------------------
 
 
-	int valueBoxValue = 0;
-	bool valueBoxEditMode = false;
+    BinaryTree m_binaryTree;
+    TreeNode* m_selectedNode = nullptr;
 
-	// Main game loop
-	while (!WindowShouldClose())    // Detect window close button or ESC key
-	{
-		// Update
-		//----------------------------------------------------------------------------------
-		// TODO: Update your variables here
-		//----------------------------------------------------------------------------------
 
-		// Draw
-		//----------------------------------------------------------------------------------
-		BeginDrawing();
+    int valueBoxValue = 0;
+    bool valueBoxEditMode = false;
 
-		ClearBackground(RAYWHITE);
+    // Main game loop
+    while (!WindowShouldClose())    // Detect window close button or ESC key
+    {
+        // Update
+        //----------------------------------------------------------------------------------
+        // TODO: Update your variables here
+        //----------------------------------------------------------------------------------
 
-		GuiSetStyle(TEXTBOX, TEXT_ALIGNMENT, GUI_TEXT_ALIGN_CENTER);
+        // Draw
+        //----------------------------------------------------------------------------------
+        BeginDrawing();
 
-		if (GuiValueBox(Rectangle{ 25, 25, 125, 30 }, NULL, &valueBoxValue, 0, 100, valueBoxEditMode)) valueBoxEditMode = !valueBoxEditMode;
+        ClearBackground(RAYWHITE);
 
-		if (GuiButton(Rectangle{ 160, 25, 125, 30 }, GuiIconText(RICON_OK_TICK, "Insert")))
-		{
-			// Implement the code to insert valueBoxValue into your binary tree here! 
-			m_binaryTree.Insert(valueBoxValue);
-			m_selectedNode = m_binaryTree.Find(valueBoxValue);
-		}
+        GuiSetStyle(TEXTBOX, TEXT_ALIGNMENT, GUI_TEXT_ALIGN_CENTER);
+        
+        if(GuiValueBox(Rectangle{ 25, 25, 125, 30 }, NULL, &valueBoxValue, 0, 100, valueBoxEditMode)) valueBoxEditMode = !valueBoxEditMode;
 
-		if (GuiButton(Rectangle{ 160, 60, 125, 30 }, GuiIconText(RICON_CROSS, "Remove")))
-		{
-			// Implement the code to remove the node with value = valueBoxValue from your binary tree here! 
-			//m_binaryTree.Remove(valueBoxValue);
-		}
+        if (GuiButton(Rectangle { 160, 25, 125, 30 }, GuiIconText(RICON_OK_TICK, "Insert")))
+        {
+            // Implement the code to insert valueBoxValue into your binary tree here! 
+            m_binaryTree.Insert(valueBoxValue);
+            //m_selectedNode = m_binaryTree.Find(valueBoxValue);
+        }
 
-		// draw the binary tree
-		m_binaryTree.Draw(m_selectedNode);
+        if (GuiButton(Rectangle{ 160, 60, 125, 30 }, GuiIconText(RICON_CROSS, "Remove")))
+        {
+            // Implement the code to remove the node with value = valueBoxValue from your binary tree here! 
+            //m_binaryTree.Remove(valueBoxValue);
+        }
 
-		EndDrawing();
-		//----------------------------------------------------------------------------------
-	}
+        // draw the binary tree
+        m_binaryTree.Draw(m_selectedNode);
 
-	// De-Initialization
-	//--------------------------------------------------------------------------------------   
-	CloseWindow();        // Close window and OpenGL context
-	//--------------------------------------------------------------------------------------
+        EndDrawing();
+        //----------------------------------------------------------------------------------
+    }
 
-	return 0;
+    // De-Initialization
+    //--------------------------------------------------------------------------------------   
+    CloseWindow();        // Close window and OpenGL context
+    //--------------------------------------------------------------------------------------
+
+    return 0;
 }

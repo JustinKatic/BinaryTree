@@ -1,4 +1,8 @@
-
+/*----------------------------------------
+Author: Richard Stern
+Description: A simple binary search tree
+Date: 17/4/2015
+----------------------------------------*/
 #ifndef _BINARYTREE_H_
 #define _BINARYTREE_H_
 
@@ -32,7 +36,7 @@ private:
 	void Draw(TreeNode*, int x, int y, int horizontalSpacing, TreeNode* selected = nullptr);
 
 	//The root node of the tree
-	TreeNode* TreeRootNode;
+	TreeNode* m_pRoot;
 };
 
 #endif //_BINARYTREE_H_
