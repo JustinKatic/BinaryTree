@@ -125,23 +125,48 @@ bool BinaryTree::FindNode(int a_nSearchValue, TreeNode*& ppOutNode, TreeNode*& p
 	return false;
 }
 
+
+
+
+
+
 void BinaryTree::Remove(int a_nValue)
 {
+	if (IsEmpty())
+	{
+		return;
+	}
 	currentNode = nullptr;
 	TreeNode* tempNode;
 	currentParent = m_pRoot;
 	FindNode(a_nValue, currentNode, currentParent);
 	if (currentNode->HasRight())
 	{
-		tempNode = currentNode;
+		tempNode = currentNode->GetRight();
 		while (tempNode->HasLeft())
 		{
 			tempNode = tempNode->GetLeft();
 		}
-		currentNode = tempNode;
-		currentParent = tempNode;
+		
+		currentParent = m_pRoot;
+		FindNode(tempNode->GetData(), tempNode, currentParent);
 
+		currentNode->m_value = tempNode->GetData();
+		delete tempNode;
+		currentParent->SetLeft(nullptr);
 	}
+	if (!currentNode->HasRight() && !currentNode->HasLeft())
+	{	
+		if (currentParent == nullptr)
+		{
+			cout << "must have 1 node in tree soz mate" << std::endl;
+			return;
+		}
+		currentParent->SetLeft(nullptr);
+		currentParent->SetRight(nullptr);
+		delete currentNode;
+	}
+
 
 }
 

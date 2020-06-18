@@ -59,6 +59,7 @@ int main(int argc, char* argv[])
             m_binaryTree.Remove(valueBoxValue);
         }
 
+	
         // draw the binary tree
         m_binaryTree.Draw(m_selectedNode);
 

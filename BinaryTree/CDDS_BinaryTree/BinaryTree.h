@@ -17,7 +17,6 @@ public:
 	bool IsEmpty() const;
 	void Insert(int a_nValue);
 	void Remove(int a_nValue);
-	void DeleteNode(TreeNode* currentParent, TreeNode* currentNode);
 	TreeNode* Find(int a_nValue);
 
 	void PrintOrdered();

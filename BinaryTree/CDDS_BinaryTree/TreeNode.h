@@ -19,10 +19,10 @@ public:
 
 	void Draw(int x, int y, bool selected=false);
 
+	int m_value;
 	
 private:
 	// this could also be a pointer to another object if you like
-	int m_value;
 
 	// node's children
 	TreeNode* m_left;
