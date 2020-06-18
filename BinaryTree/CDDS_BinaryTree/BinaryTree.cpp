@@ -18,10 +18,10 @@ BinaryTree::BinaryTree()
 
 BinaryTree::~BinaryTree()
 {
-	while (m_pRoot)
-	{
-		Remove(m_pRoot->GetData());
-	}
+	//while (m_pRoot)
+	//{
+	//	Remove(m_pRoot->GetData());
+	//}
 }
 
 // Return whether the tree is empty
@@ -101,7 +101,6 @@ bool BinaryTree::FindNode(int a_nSearchValue, TreeNode*& ppOutNode, TreeNode*& p
 			if (currentNode->HasLeft() == true)
 			{
 				currentNode = currentNode->GetLeft();
-				FindNode(a_nSearchValue, ppOutNode, ppOutParent);
 			}
 			else
 			{
@@ -114,7 +113,6 @@ bool BinaryTree::FindNode(int a_nSearchValue, TreeNode*& ppOutNode, TreeNode*& p
 			if (currentNode->HasRight() == true)
 			{
 				currentNode = currentNode->GetRight();
-				FindNode(a_nSearchValue, ppOutNode, ppOutParent);
 			}
 			else
 			{
@@ -129,6 +127,21 @@ bool BinaryTree::FindNode(int a_nSearchValue, TreeNode*& ppOutNode, TreeNode*& p
 
 void BinaryTree::Remove(int a_nValue)
 {
+	currentNode = nullptr;
+	TreeNode* tempNode;
+	currentParent = m_pRoot;
+	FindNode(a_nValue, currentNode, currentParent);
+	if (currentNode->HasRight())
+	{
+		tempNode = currentNode;
+		while (tempNode->HasLeft())
+		{
+			tempNode = tempNode->GetLeft();
+		}
+		currentNode = tempNode;
+		currentParent = tempNode;
+
+	}
 
 }
 

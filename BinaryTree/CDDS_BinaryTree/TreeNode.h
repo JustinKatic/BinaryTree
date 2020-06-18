@@ -18,6 +18,7 @@ public:
 	void SetRight(TreeNode* node) { this->m_right = node;}
 
 	void Draw(int x, int y, bool selected=false);
+
 	
 private:
 	// this could also be a pointer to another object if you like

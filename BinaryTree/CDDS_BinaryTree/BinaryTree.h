@@ -17,12 +17,16 @@ public:
 	bool IsEmpty() const;
 	void Insert(int a_nValue);
 	void Remove(int a_nValue);
+	void DeleteNode(TreeNode* currentParent, TreeNode* currentNode);
 	TreeNode* Find(int a_nValue);
 
 	void PrintOrdered();
 	void PrintUnordered();
 
 	void Draw(TreeNode* selected = nullptr);
+
+	TreeNode* currentNode = nullptr;
+	TreeNode* currentParent = nullptr;
 
 private:
 	//Find the node with the specified value.
@@ -40,3 +44,4 @@ private:
 };
 
 #endif //_BINARYTREE_H_
+
