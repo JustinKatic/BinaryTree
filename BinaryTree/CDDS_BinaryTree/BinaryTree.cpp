@@ -75,6 +75,57 @@ void BinaryTree::Insert(int a_nValue)
 	}
 }
 
+void BinaryTree::Reinsert(TreeNode* node)
+{
+	TreeNode* currentNode = m_pRoot;
+	if (IsEmpty() == true)
+	{
+		m_pRoot = node;
+		return;
+	}
+	// Finding an empty node
+	while (currentNode != nullptr)
+	{
+		// If the value is less, go left
+		if (node->GetData() < currentNode->GetData())
+		{
+			// If the node has no left child, we have found an empty spot and we break out of the loop
+			if (currentNode->HasLeft() == false)
+			{
+				break;
+			}
+			// Make the current node the left one
+			currentNode = currentNode->GetLeft();
+		}
+		// If the value is greater, go right
+		else if (node->GetData() > currentNode->GetData())
+		{
+			// If the node has no right child, we have found an empty spot and we break out of the loop
+			if (!currentNode->HasRight() == true)
+			{
+				break;
+			}
+			// Make the current node the right one
+			currentNode = currentNode->GetRight();
+		}
+		// If the number already exists
+		else if (node->GetData() == currentNode->GetData())
+		{
+			std::cout << "Number already exists in the tree." << std::endl;
+			return;
+		}
+	}
+	// Once the empty node has been found, set the value
+	if (node->GetData() < currentNode->GetData())
+	{
+		currentNode->SetLeft(node);
+	}
+	else
+	{
+		currentNode->SetRight(node);
+	}
+}
+
 TreeNode* BinaryTree::Find(int a_nValue)
 {
 	TreeNode* pCurrent = nullptr;
@@ -127,9 +178,6 @@ bool BinaryTree::FindNode(int a_nSearchValue, TreeNode*& ppOutNode, TreeNode*& p
 
 
 
-
-
-
 void BinaryTree::Remove(int a_nValue)
 {
 	if (IsEmpty())
@@ -137,36 +185,38 @@ void BinaryTree::Remove(int a_nValue)
 		return;
 	}
 	currentNode = nullptr;
-	TreeNode* tempNode;
 	currentParent = m_pRoot;
+	TreeNode* tempNode;
+	TreeNode* leftChild;
+	TreeNode* rightChild;
 	FindNode(a_nValue, currentNode, currentParent);
-	if (currentNode->HasRight())
+	leftChild = currentNode->GetLeft();
+	rightChild = currentNode->GetRight();
+
+	if (currentParent != nullptr)
 	{
-		tempNode = currentNode->GetRight();
-		while (tempNode->HasLeft())
+		if (currentParent->GetLeft() == currentNode)
 		{
-			tempNode = tempNode->GetLeft();
+			currentParent->SetLeft(nullptr);
 		}
-		
-		currentParent = m_pRoot;
-		FindNode(tempNode->GetData(), tempNode, currentParent);
-
-		currentNode->m_value = tempNode->GetData();
-		delete tempNode;
-		currentParent->SetLeft(nullptr);
-	}
-	if (!currentNode->HasRight() && !currentNode->HasLeft())
-	{	
-		if (currentParent == nullptr)
+		else if (currentParent->GetRight() == currentNode)
 		{
-			cout << "must have 1 node in tree soz mate" << std::endl;
-			return;
+			currentParent->SetRight(nullptr);
 		}
-		currentParent->SetLeft(nullptr);
-		currentParent->SetRight(nullptr);
-		delete currentNode;
 	}
-
+	if (currentNode == m_pRoot)
+	{
+		m_pRoot = nullptr;
+	}
+	currentNode = nullptr;
+	if (leftChild != nullptr)
+	{
+		Reinsert(leftChild);
+	}
+	if (rightChild != nullptr)
+	{
+		Reinsert(rightChild);
+	}
 
 }
 
