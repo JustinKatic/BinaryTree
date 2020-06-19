@@ -18,10 +18,10 @@ BinaryTree::BinaryTree()
 
 BinaryTree::~BinaryTree()
 {
-	//while (m_pRoot)
-	//{
-	//	Remove(m_pRoot->GetData());
-	//}
+	while (m_pRoot)
+	{
+		Remove(m_pRoot->GetData());
+	}
 }
 
 // Return whether the tree is empty
@@ -220,27 +220,6 @@ void BinaryTree::Remove(int a_nValue)
 
 }
 
-void BinaryTree::PrintOrdered()
-{
-	PrintOrderedRecurse(m_pRoot);
-	cout << endl;
-}
-
-void BinaryTree::PrintOrderedRecurse(TreeNode* pNode)
-{
-
-}
-
-void BinaryTree::PrintUnordered()
-{
-	PrintUnorderedRecurse(m_pRoot);
-	cout << endl;
-}
-
-void BinaryTree::PrintUnorderedRecurse(TreeNode* pNode)
-{
-
-}
 
 void BinaryTree::Draw(TreeNode* selected)
 {
