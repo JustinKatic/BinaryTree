@@ -20,8 +20,6 @@ public:
 	void Remove(int a_nValue);
 	TreeNode* Find(int a_nValue);
 
-	void PrintOrdered();
-	void PrintUnordered();
 
 	void Draw(TreeNode* selected = nullptr);
 
