@@ -1,0 +1,77 @@
+commit a07750e9b6fdb98be7c4d4e9444fd9b370fbf86a
+Author: JustinKatic <60805792+JustinKatic@users.noreply.github.com>
+Date:   Wed Jul 1 07:50:31 2020 +1000
+
+    ReadMe updated
+
+commit 6dff0060f70890249f0a02ed7e4eed6b18aebcd0
+Author: Justin <justinkatic4@gmail.com>
+Date:   Fri Jun 26 16:48:04 2020 +1000
+
+    added more commenting
+
+commit bb5c1d2d425f0315e3267a55f5f704454ef1afd0
+Author: Justin <justinkatic4@gmail.com>
+Date:   Fri Jun 26 15:29:05 2020 +1000
+
+    removes unused functions
+
+commit 975d392fb247a5189dcf7182709f146eea7890c7
+Author: Katic44 <justinkatic4@gmail.com>
+Date:   Fri Jun 19 12:37:48 2020 +1000
+
+    completed bin tree commit
+
+commit fc52bda39faaf110988c2d52ad90788bd672d97c
+Author: Katic44 <justinkatic4@gmail.com>
+Date:   Fri Jun 19 12:23:52 2020 +1000
+
+    added search function
+
+commit 7c19b2924d48ac1dc7db79f443999afcb99ef6be
+Author: Katic44 <justinkatic4@gmail.com>
+Date:   Fri Jun 19 11:43:19 2020 +1000
+
+    finished implementing remove function and added a second insert function that takes in a node and a value
+
+commit bf4f1d849c1f8c53dd37c7cca433396de768b299
+Author: Katic44 <justinkatic4@gmail.com>
+Date:   Thu Jun 18 22:49:56 2020 +1000
+
+    no message
+
+commit 4831c32b9faf0696bfc44becf8880ce181b86195
+Author: Katic44 <justinkatic4@gmail.com>
+Date:   Thu Jun 18 16:45:59 2020 +1000
+
+    Binary tree insert and find fuction complete
+
+commit e9aee8a1fb9603baf055e8ec9673995df28e6ea0
+Author: Katic44 <justinkatic4@gmail.com>
+Date:   Wed Jun 17 21:18:06 2020 +1000
+
+    insert fuction and find fuction implemented
+
+commit 83730e63abd0a49a8080ecc6b83c5290ef7260ce
+Author: Katic44 <justinkatic4@gmail.com>
+Date:   Tue Jun 16 17:34:42 2020 +1000
+
+    no message
+
+commit b60d0cd9a28e36d5d78a996d0b0732311c862676
+Author: Katic44 <justinkatic4@gmail.com>
+Date:   Mon Jun 15 16:41:09 2020 +1000
+
+    raylib setup
+
+commit 68e2c5c9ed94d6720cb64d6a67d5e2a60d0f2053
+Author: Katic44 <justinkatic4@gmail.com>
+Date:   Mon Jun 15 16:09:44 2020 +1000
+
+    initial commit
+
+commit d314fd0f74c2120ee85f6ecc5cc83bd4387e78d3
+Author: JustinKatic <60805792+JustinKatic@users.noreply.github.com>
+Date:   Mon Jun 15 16:07:47 2020 +1000
+
+    Initial commit
